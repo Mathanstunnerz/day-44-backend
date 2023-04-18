@@ -14,8 +14,8 @@ const app = express();
 const PORT = process.env.PORT;
 app.use(cors())
 app.use(express.json());
-const MONGO_URL = "mongodb://127.0.0.1";
-// const MONGO_URL = process.env.MONGO_URL;
+// const MONGO_URL = "mongodb://127.0.0.1";
+const MONGO_URL = process.env.MONGO_URL;
 const client = new MongoClient(MONGO_URL); 
 // Top level awai
 await client.connect(); // call
