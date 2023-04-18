@@ -30,7 +30,7 @@ async function generateHashedpassword(password){
 app.get("/", function (request, response) {
   response.send("🙋‍♂️, 🌏 🎊✨🤩");
 });
-app.get("/url/:url", async function (request, response) {
+app.get("/:url", async function (request, response) {
   const url = request.params.url
   const find2 = await client .db("day-44").collection("urldata").findOne({converted_url:url });
   response.redirect(find2.original_url)
